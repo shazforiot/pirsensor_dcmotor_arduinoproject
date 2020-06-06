@@ -1,0 +1,22 @@
+const int pirPin = 9;
+const int motorPin = 2;
+int switchState = 0;
+
+// the setup routine runs once when you press reset:
+void setup() {
+  // initialize the digital pin as an output.
+  pinMode(motorPin, OUTPUT);
+  pinMode(pirPin, INPUT);
+}
+
+// the loop routine runs over and over again forever:
+void loop() {
+  switchState = digitalRead(pirPin);
+  
+  if (switchState == HIGH) {
+    digitalWrite(motorPin, HIGH);
+  }
+  else {
+    digitalWrite(motorPin, LOW);
+  }
+}
